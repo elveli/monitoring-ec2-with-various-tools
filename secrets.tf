@@ -1,8 +1,9 @@
 resource "random_password" "grafana_admin" {
-  length = 20
-  override_characters = "!@#-"
-  special = true
+  length           = 16
+  special          = true
+  override_special = "!@#-"
 }
+
 
 resource "aws_secretsmanager_secret" "grafana" { name = "grafana-admin-credentials" }
 

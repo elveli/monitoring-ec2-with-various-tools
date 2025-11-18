@@ -1,5 +1,5 @@
 resource "aws_security_group" "app_monitor" {
-  name   = "sg-app-monitor"
+  name   = "app-app-monitor-sg"
   vpc_id = aws_vpc.this.id
   description = "Allow HTTP and monitoring ports (no SSH)."
 
@@ -50,5 +50,5 @@ resource "aws_security_group" "app_monitor" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = { Name = "sg-app-monitor" }
+  tags = { Name = "app-app-monitor-sg" }
 }
